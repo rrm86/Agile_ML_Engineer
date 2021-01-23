@@ -31,8 +31,8 @@ resource "azurerm_app_service_plan" "plan" {
   reserved            = true
   sku {
     capacity = 1
-    size = "B1"
-    tier = "Standard"
+    size     = "B1"
+    tier     = "Standard"
   }
 }
 
@@ -43,8 +43,8 @@ resource "azurerm_app_service" "app" {
   app_service_plan_id = azurerm_app_service_plan.plan.id
 
   site_config {
-        linux_fx_version= "PYTHON|3.7"
-        local_mysql_enabled = false
-    }
+    linux_fx_version    = "PYTHON|3.7"
+    local_mysql_enabled = false
+  }
 
 }
