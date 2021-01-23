@@ -1,6 +1,10 @@
 name: Python application test with Github Actions
 
-on: [push]
+on:
+  push:
+    branches:
+    - main
+  pull_request:
 
 jobs:
   build:
