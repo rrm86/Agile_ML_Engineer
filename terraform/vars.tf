@@ -1,10 +1,10 @@
 variable "prefix" {
   description = "Define the resources prefix"
-  default     = "Agile-ML-Enginnering-Project"
+  default     = "Agile-ML-Engineering-Project"
 }
 
 variable "location" {
-  description = "The Azure  Region in which all resources will be created"
+  description = "The Azure Region in which all resources will be created"
   default     = "Brazil South"
 
 }
