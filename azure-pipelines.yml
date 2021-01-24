@@ -7,7 +7,7 @@ trigger: none
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'b91bed4e-505d-4ea2-99ad-458d7e4b5eab'
+  azureServiceConnectionId: 'ab946e96-a06a-4454-a227-d4cec4a4d66b'
   
   # Web app name
   webAppName: 'Agile-ML-Engineering-Project-app-service'
