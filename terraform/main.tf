@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "rg" {
-  name     = "${var.prefix}-rg"
+  name = "${var.prefix}-rg"
 }
 
 resource "azurerm_app_service_plan" "plan" {
