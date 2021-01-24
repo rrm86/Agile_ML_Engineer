@@ -27,8 +27,8 @@ jobs:
     - name: Test with pytest
       run: |
         make test
-    - uses: Azure/pipelines@v1
     - name: Trigger CD on azure devops
+    - uses: Azure/pipelines@v1
       with:
         azure-devops-project-url: 'https://dev.azure.com/ronnaldmachado0697/Agile_ML_Engineer'
         azure-pipeline-name: 'rrm86.Agile_ML_Engineer' # name of the Azure pipeline to be triggered
