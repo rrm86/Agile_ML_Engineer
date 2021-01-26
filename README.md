@@ -102,9 +102,10 @@ Running Terraform Locally
   * Run: ``` $ terraform init ```
   * Run: ``` $ terraform plan ```
   * Run: ``` $ terraform apply ```
-Running Terraform Locally
+
+Running Terraform Cloud
   * Go to your workspace and queue a plan or send a commit to the branch terraform
-  [terraform plan](!)
+  ![terraform plan](img/terraform-plan.png)
 
 To deploy the application on the new infrastructure, you can trigger the azure pipeline or send a push for the main branch.
 
@@ -120,29 +121,32 @@ or going to [https://your-project-name.azurewebsites.net:]
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Project running on Azure App Service
+![running-on-app-service](img/running-on-app-service.png)
 
 * Project cloned into Azure Cloud Shell
+![clone-azure-shell](img/clone-azure-shell.png)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
+![lint-test](img/lint-test.png)
 
 * Successful deploy of the project in Azure Pipelines.  [official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
 * Running Azure App Service from Azure Pipelines automatic deployment
+![deploy](img/deploy.png)
 
 * Successful prediction from deployed flask app in Azure Cloud Shell. 
 The output should look similar to this:
+![output-prediction](img/output-prediction.png)
 
-```bash
-ronnald@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
 
 * Output of streamed log files from deployed application
+![app-log](img/app-log.png)
 
+
+```bash
+$ terraform destroy
+```
+![terraform-destroy](img/terraform-destroy.png)
 > 
 
 ## Enhancements
