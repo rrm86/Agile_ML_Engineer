@@ -20,11 +20,102 @@ The application code are in the main branch and the terraform code in the terraf
 
 ## Project Plan
 <TODO: Project Plan
+Write Justification
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* [My Trello Board](https://trello.com/b/nW0gCtrh/ml-engineer-project-management)
+* [Project Management Spreadsheet](https://docs.google.com/spreadsheets/d/1dRuGp9mv1GS10t1vNzEBxuM7Wo3qXMUFMJQdX5cRaOU/edit?usp=sharing)
 
 ## Instructions
+### Prerequisites & Setup
+#### Appication Code
+The Code is written in Python 3.7 . If you don't have Python installed you can find it [here](https://www.python.org/downloads/). 
+ 
+ * Create a virtual environment
+ ```bash
+ $ python3 -m venv <project-name>
+ ```
+And inside the project folder run:
+```bash
+ $ source bin/activate
+ ```
+ Once your virtual environment is ready, you can go to the project root folder and run:
+ ```bash
+ $ pip install -r requirements.txt
+```
+#### Insfrastructure Code
+The Code is written in Terraform 0.14 . If you don't have Terraform installed you can find it [here](https://www.terraform.io/downloads.html).
+
+This project runs terraform with [terraform cloud](https://www.terraform.io/docs/language/settings/backends/remote.html) as backend. 
+To run locally go to the terraform folder(terraform branch) and comment the block terraform on main.tf file.
+
+#### Azure
+* Azure account
+* [Azure CLI](https://docs.microsoft.com/pt-br/cli/azure/install-azure-cli)
+To authentic into azure cloud run and follow the instructions:
+```bash 
+$ az login
+```
+- To check your account run:
+```bash 
+$ az account list
+```
+ - In order to perform changes on the azure subscription you need to create an Active Directory service principal account.
+```bash
+$ az ad sp create-for-rbac --skip-assignment
+{
+  "appId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "displayName": "azure-cli-20**-**-**-**-**-**",
+  "name": "http://azure-cli-20**-**-**-**-**-**",
+  "password": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "tenant": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+}
+```
+Copy the output. You'll be prompt to input this values when run terraform init/plan if you run locally!
+For terraform cloud backend, configure key->value on UI.
+For connection configurations between github actions and Terraform cloud check [this link](https://learn.hashicorp.com/tutorials/terraform/github-actions).
+
+- Create a resouce group for the project:
+```bash
+$ az group create --name Agile-ML-Engineering-Project-rg --location 'Your Region'
+```
+- [Configure](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops) Azure devops with github.
+
+### Execution
+
+#### Locally
+To run the flask application locally, go to the root folder and run:
+```bash
+$ python app.py
+```
+You can go to 0.0.0.0:5000 and see the home application.
+To test prediction run
+
+You can test the prediciont running:
+```bash
+$ chmod +x make_predictons.sh
+$ ./make_predictions.sh
+```
+#### Cloud
+Running Terraform Locally
+* Build Cloud Infrastructure
+  * Switch to the terraform branch and go to the terraform folder
+  * Run: ``` $ terraform init ```
+  * Run: ``` $ terraform plan ```
+  * Run: ``` $ terraform apply ```
+Running Terraform Locally
+  * Go to your workspace and queue a plan or send a commit to the branch terraform
+  [terraform plan](!)
+
+To deploy the application on the new infrastructure, you can trigger the azure pipeline or send a push for the main branch.
+
+
+You can test the prediciont running on Azure:
+```bash
+$ chmod +x make_predict_azure_app.sh
+$ ./make_predict_azure_app.sh
+```
+or going to [https://your-project-name.azurewebsites.net:]
+#### 
 
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
