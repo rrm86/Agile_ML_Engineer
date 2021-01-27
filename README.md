@@ -3,24 +3,28 @@
 [![Build Status](https://dev.azure.com/ronnaldmachado0697/Agile_ML_Engineer/_apis/build/status/rrm86.Agile_ML_Engineer?branchName=main)](https://dev.azure.com/ronnaldmachado0697/Agile_ML_Engineer/_build/latest?definitionId=3&branchName=main)
 # Overview
 
-A data science team built a model using scikit learn and exported a [joblib file](https://scikit-learn.org/stable/modules/model_persistence.html). They wish to share this functions with all company throught an API.
+A data science team built a model using scikit learn and exported a [joblib file](https://scikit-learn.org/stable/modules/model_persistence.html). They wish to share the prediction functions with the world through an API.
 
-In this project I implemented a Microservice strategy using flask and Azure web app to delivery the solution.
+In this project, I implemented a Microservice strategy using flask and Azure web app to deliver an MVP.
 
-Desgined to be the single source of thruth this repo has the code of the application and the code to build the infrastructure.
+Designed to be the single source of truth this repo has the code of the application and the code to build the infrastructure.
 
-For application I implemented a full CI/CD cycle using Github Actions (CI) and Azure Devops (CD). 
+For application, I implemented a full CI/CD cycle using Github Actions (CI) and Azure DevOps (CD). 
+
+link github actions
+link azure devops
 
 For infrastructure provisioning, I use terraform. A full CI/CD cycle was implemented using Github Actions(CI) and Terraform Cloud(CD).
 
-The application code are in the main branch and the terraform code in the terraform branch.
+The application code is in the main branch and the terraform code in the terraform branch.
+
 
 ![Diagram](img/diagram.png)
 
 
 ## Project Plan
-<TODO: Project Plan
-Write Justification
+
+Agile Planning using spreadsheet and tickets.
 
 * [My Trello Board](https://trello.com/b/nW0gCtrh/ml-engineer-project-management)
 * [Project Management Spreadsheet](https://docs.google.com/spreadsheets/d/1dRuGp9mv1GS10t1vNzEBxuM7Wo3qXMUFMJQdX5cRaOU/edit?usp=sharing)
@@ -41,6 +45,10 @@ And inside the project folder run:
  Once your virtual environment is ready, you can go to the project root folder and run:
  ```bash
  $ pip install -r requirements.txt
+```
+Or run:
+ ```bash
+ $ make install
 ```
 #### Insfrastructure Code
 The Code is written in Terraform 0.14 . If you don't have Terraform installed you can find it [here](https://www.terraform.io/downloads.html).
@@ -115,34 +123,33 @@ You can test the prediciont running on Azure:
 $ chmod +x make_predict_azure_app.sh
 $ ./make_predict_azure_app.sh
 ```
-or going to [https://your-project-name.azurewebsites.net:]
+or going to https://your-project-name.azurewebsites.net
 #### 
 
+## Screenshots:
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
+* Project up and running
 ![running-on-app-service](img/running-on-app-service.png)
 
 * Project cloned into Azure Cloud Shell
 ![clone-azure-shell](img/clone-azure-shell.png)
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+* Passing tests after running the `make all` command from the `Makefile`
 ![lint-test](img/lint-test.png)
 
-* Successful deploy of the project in Azure Pipelines.  [official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+* Successful deploy of the project in Azure Pipelines.  ![deployed-pipeline.png](img/deployed-pipeline.png).
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 ![deploy](img/deploy.png)
 
 * Successful prediction from deployed flask app in Azure Cloud Shell. 
-The output should look similar to this:
 ![output-prediction](img/output-prediction.png)
 
 
 * Output of streamed log files from deployed application
 ![app-log](img/app-log.png)
 
-
+After finish your job you can destroy your infrastructure running:
 ```bash
 $ terraform destroy
 ```
