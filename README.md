@@ -158,8 +158,14 @@ $ terraform destroy
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
-Also I created a virtualization branch with scaffolding to running the application on docker or kubernets.
+The project is running well but, it's limited to Azure.
+To avoid this, you can run the project in a container(Docker/ Kubernetes) and adopt a MultiCloud Strategy.
+
+For this purpose, I create a multi-cloud branch with scripts to run the app on containers.
+
+Once we have containers, we can use terraform to manage our multi-cloud infrastructure.
+
+[Check out](https://medium.com/ventx/terraform-kubernetes-multi-cloud-7d05f67a75d6) this nice post from Hans Joerg Wieland to understand how to implement it.
 
 ## Demo 
 
