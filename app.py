@@ -21,7 +21,7 @@ def scale(payload):
 @app.route("/")
 def home():
     html = "<h3>Sklearn Prediction Home.</h3>\
-            <h3>Python + GitHub Actions + Terraform + Azure</h3>\
+            <h3>Python + GitHub Actions + Terraform + Azure Pipeline</h3>\
             <h4>Author: Ronnald R. Machado</h4>"
     return html.format(format)
 
