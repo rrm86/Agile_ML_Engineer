@@ -11,8 +11,8 @@ Designed to be the single source of truth this repo has the code of the applicat
 
 For application, I implemented a full CI/CD cycle using Github Actions (CI) and Azure DevOps (CD). 
 
-link github actions
-link azure devops
+- [Check my Github actions](https://github.com/rrm86/Agile_ML_Engineer/actions)
+- [Check my Azure Pipeline](https://dev.azure.com/ronnaldmachado0697/Agile_ML_Engineer/_build)
 
 For infrastructure provisioning, I use terraform. A full CI/CD cycle was implemented using Github Actions(CI) and Terraform Cloud(CD).
 
