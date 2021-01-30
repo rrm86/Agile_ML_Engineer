@@ -149,6 +149,9 @@ or going to https://your-project-name.azurewebsites.net
 * Output of streamed log files from deployed application
 ![app-log](img/app-log.png)
 
+* Load test with locust (100 users)
+ ![terraform-destroy](img/locust-load-test.png)
+
 After finish your job you can destroy your infrastructure running:
 ```bash
 $ terraform destroy
